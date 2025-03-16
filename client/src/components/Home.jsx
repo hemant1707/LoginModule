@@ -1,18 +1,17 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 
 export default function Home() {
 	const location = useLocation();
 	const user = location.state?.user;
-	return (
-		<center>
-			<h1 style={{ color: "white" }}>Welcome Home {user && user.name}</h1>
-		</center>
 
-export default function Home() {
+	if (!user) {
+		return <p>No user data found. Please log in again.</p>;
+	}
+
 	return (
 		<div>
-			Home
+			<h1>Welcome, {user.name}!</h1>
+			<p>Email: {user.email}</p>
 		</div>
-	)
+	);
 }

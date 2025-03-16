@@ -7,7 +7,6 @@ import { SetIsloogedInContext, IsloogedInContext } from '../App';
 export default function NavBar() {
 	const isloogedIn = useContext(IsloogedInContext);
 	const setIsloogedIn = useContext(SetIsloogedInContext);
-import React from 'react'
 
 	return (
 		<>
