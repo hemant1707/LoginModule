@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useContext } from 'react'
 import { Grid, Paper, TextField, Typography, Button, Link } from '@mui/material';
 import axios from "axios";
@@ -33,15 +32,7 @@ export default function Login() {
 					alert(err.message);
 				}
 			})
-=======
-import React, { useState} from 'react'
-import { Grid, Paper, TextField, Typography, Button, Link } from '@mui/material';
 
-export default function Login() {
-	const [formData, setFormData] = useState({});
-	const handleLogin = () => {
-		console.log('Form Data', formData);
->>>>>>> origin/main
 	}
 	const onChange = (e) => {
 		const { name, value } = e.target;
@@ -51,11 +42,8 @@ export default function Login() {
 		}))
 		console.log('Form Data', formData);
 	}
-<<<<<<< HEAD
 	const row = { display: "flex", marginTop: "2rem", width: '90%' };
-=======
-	const row = { display: "flex", marginTop: "2rem", width: '90%' };	
->>>>>>> origin/main
+
 	return (
 		<div>
 			<Grid align="center">
@@ -70,13 +58,9 @@ export default function Login() {
 				}}>
 					<Typography variant="h5"> Login</Typography>
 					<form onSubmit={handleLogin}>
-<<<<<<< HEAD
 						<TextField style={row} id="standard-basic" label="Email" variant="standard" type='email' name="email" onChange={onChange} required />
 						<TextField style={row} id="standard-basic" label="Password" variant="standard" type='password' name="password" onChange={onChange} required />
-=======
-						<TextField style={row} id="standard-basic" label="Email" variant="standard" type='email' name="email" onChange={onChange} required/>
-						<TextField style={row} id="standard-basic" label="Password" variant="standard" type='password' name="password" onChange={onChange} required/>
->>>>>>> origin/main
+
 						<Button style={row} type="submit" variant="contained">Submit</Button>
 					</form>
 					<p>New User?<Link href="/signup"> Register</Link></p>
