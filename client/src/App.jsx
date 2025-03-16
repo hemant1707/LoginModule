@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+=======
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+>>>>>>> origin/main
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import NavBar from './components/NavBar'
+<<<<<<< HEAD
 import { useState, useEffect, createContext } from 'react'
 import axios from 'axios';
 
@@ -37,6 +43,22 @@ function App() {
           </BrowserRouter>
         </SetIsloogedInContext.Provider>
       </IsloogedInContext.Provider>
+=======
+function App() {
+
+  return (
+    <>
+      <BrowserRouter>
+       <NavBar/>
+        <Routes>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/Home" element={<Home />}></Route>
+        </Routes>
+      </BrowserRouter>
+
+>>>>>>> origin/main
     </>
   )
 }
