@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useContext } from 'react';
 import { Button } from '@mui/material';
 import axios from 'axios';
@@ -23,14 +22,5 @@ export default function Logout() {
 		<div>
 			<Button variant="contained" onClick={handleLogout}>Logout</Button>
 		</div >
-=======
-import React from 'react'
-
-export default function Logout() {
-	return (
-		<div>
-			Logout
-		</div>
->>>>>>> origin/main
 	)
 }
