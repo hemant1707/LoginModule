@@ -9,26 +9,23 @@ export default function Login() {
 	const [formData, setFormData] = useState({ email: '', password: '' });
 	const navigate = useNavigate();
 
-	const handleLogin = async (e) => {
+	const handleLogin = (e) => {
 		e.preventDefault();
-		try {
-			const loginResponse = await axios.post("http://localhost:3001/login", formData, { withCredentials: true });
-			if (loginResponse.status === 200) {
-				const userResponse = await axios.get("http://localhost:3001/user", { withCredentials: true });
-				if (userResponse.data.user) {
-					console.log('User Data', userResponse.data.user);
-					setIsloogedIn(true);
-					navigate('/home', { state: { user: userResponse.data.user } });
+		axios.post("http://localhost:3001/login", formData, { withCredentials: true })
+			.then(result => {
+				if (result.status === 200) {
+					axios.get('http://localhost:3001/user', { withCredentials: true })
+						.then(response => {
+							if (response.data.user) {
+								setIsloogedIn(true);
+								navigate("/home", { state: { user: response.data.user } });
+							}
+						});
+				} else {
+					alert("Login failed");
 				}
-			}
-		} catch (err) {
-			const res = err.response;
-			if (res && res.status === 400) {
-				alert("User does not exist!");
-			} else {
-				alert(err.message);
-			}
-		}
+			})
+			.catch(err => console.log(err));
 	};
 
 	const onChange = (e) => {
